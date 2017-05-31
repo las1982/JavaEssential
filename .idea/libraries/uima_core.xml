@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="uima-core">
+    <CLASSES>
+      <root url="jar://C:/apache-uima/lib/uima-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
