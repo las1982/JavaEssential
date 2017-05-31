@@ -48,10 +48,11 @@ public class IBAN {
 
     public int GetControlNumber() {
 //        String IBANarr = IBAN.substring(4) + IBAN.substring(0, 4);
-        String IBANarr = IBAN.substring(4);
+//        String IBANarr = IBAN.substring(4);
+        String IBANarr = IBAN.substring(4) + IBAN.substring(0, 2) + "00";
         String IBANtoNumber = "";
         for (int i = 0; i < IBANarr.length(); i++) {
-            IBANtoNumber += CharacterIntMap.getOrDefault(IBANarr.substring(i, i+1), IBANarr.substring(i, i+1));
+            IBANtoNumber += CharacterIntMap.getOrDefault(IBANarr.substring(i, i + 1), IBANarr.substring(i, i + 1));
         }
         BigInteger hh = new BigInteger(IBANtoNumber);
         BigInteger gg = hh.mod(new BigInteger("97"));
@@ -61,6 +62,6 @@ public class IBAN {
     public static void main(String[] args) {
         IBAN i1 = new IBAN("GB82WEST12345698765432");
         IBAN i2 = new IBAN("ES9121000418450200051332");
-        System.out.println(i2.GetControlNumber());
+        System.out.println(i1.GetControlNumber() + " " + i2.GetControlNumber());
     }
 }
