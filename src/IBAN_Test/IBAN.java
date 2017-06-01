@@ -22,7 +22,7 @@ public class IBAN {
         }
         BigInteger hh = new BigInteger(IBANtoNumber.toString());
         BigInteger gg = hh.mod(new BigInteger("97"));
-        return (int) 98 - gg.intValue();
+        return 98 - gg.intValue();
     }
 
     public static void main(String[] args) {
